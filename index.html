@@ -9,13 +9,13 @@
         :root {
             --bg: #0a0a0c;
             --card-bg: #111114;
-            --accent: #00ff9d; /* Siber yeşil */
+            --accent: #00ff9d; 
             --accent-soft: rgba(0, 255, 157, 0.1);
             --text-main: #e2e8f0;
             --text-dim: #94a3b8;
         }
 
-        * { margin: 0; padding: 0; box-box: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg);
@@ -25,10 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* Kod yazısı tipi vurguları */
-        code, .tech-font { font-family: 'Fira Code', monospace; }
-
-        /* Arka plan efekti */
         body::before {
             content: "";
             position: fixed;
@@ -48,24 +44,26 @@
             margin-bottom: 60px;
         }
 
+        .tech-font { font-family: 'Fira Code', monospace; }
+
         .glitch {
             font-size: 3.5rem;
             font-weight: 700;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: -2px;
-            position: relative;
         }
 
         .status-bar {
             display: inline-block;
             background: var(--accent-soft);
             color: var(--accent);
-            padding: 4px 12px;
+            padding: 6px 15px;
             border-radius: 4px;
-            font-size: 0.8rem;
-            margin-top: 10px;
+            font-size: 0.85rem;
+            margin-top: 15px;
             border: 1px solid var(--accent);
+            box-shadow: 0 0 15px var(--accent-soft);
         }
 
         .grid {
@@ -85,18 +83,8 @@
 
         .card:hover {
             border-color: var(--accent);
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(0, 255, 157, 0.1);
-        }
-
-        .card::after {
-            content: "CERT_VERIFIED";
-            position: absolute;
-            top: 10px; right: 10px;
-            font-size: 0.6rem;
-            color: var(--accent);
-            opacity: 0.3;
-            font-family: 'Fira Code';
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
         }
 
         .vendor {
@@ -130,11 +118,13 @@
         }
 
         h2 {
-            margin: 40px 0 20px;
-            font-size: 1.5rem;
+            margin: 50px 0 25px;
+            font-size: 1.4rem;
             color: var(--text-dim);
             display: flex;
             align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h2::after {
@@ -151,10 +141,12 @@
             color: var(--text-dim);
             font-family: 'Fira Code';
             font-size: 0.8rem;
+            border-top: 1px solid #1e293b;
+            padding-top: 40px;
         }
 
         @media (max-width: 768px) {
-            .glitch { font-size: 2.5rem; }
+            .glitch { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -163,8 +155,10 @@
 <div class="container">
     <header>
         <div class="glitch tech-font">YETKIN</div>
-        <p style="color: var(--text-dim); margin-top: 15px;">Junior Cyber Security Analyst & Penetration Tester</p>
-        <div class="status-bar tech-font">> System Status: Operational / Age: 14.9</div>
+        <p style="color: var(--text-dim); margin-top: 15px; font-size: 1.1rem;">
+            Cyber Security Enthusiast | Penetration Tester | Network Security
+        </p>
+        <div class="status-bar tech-font">> STATUS: FULL_ACCESS // AGE: 15 // LOCATION: TR</div>
     </header>
 
     <h2>[01] Global Certifications</h2>
@@ -173,51 +167,66 @@
             <span class="vendor">Cisco Networking Academy</span>
             <h3 class="cert-name">Introduction to Cybersecurity</h3>
             <div class="tags">
-                <span class="tag">Global</span><span class="tag">Network</span><span class="tag">Security</span>
+                <span class="tag">International</span><span class="tag">Foundations</span><span class="tag">EN</span>
             </div>
         </div>
     </div>
 
-    <h2>[02] Offensive & Defensive Skills (BTK)</h2>
+    <h2>[02] BTK Akademi Certification Stack</h2>
     <div class="grid">
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Kali Linux & Sızma Testi</h3>
-            <div class="tags"><span class="tag">Offensive</span><span class="tag">Pentest</span></div>
+            <h3 class="cert-name">Kali Linux</h3>
+            <div class="tags"><span class="tag">OS</span><span class="tag">Offensive</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Mobil Güvenlik</h3>
-            <div class="tags"><span class="tag">Mobile</span><span class="tag">Exploit</span></div>
+            <h3 class="cert-name">Sızma Testi</h3>
+            <div class="tags"><span class="tag">Pentest</span><span class="tag">Security</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Ağ & İleri Ağ Teknolojileri</h3>
-            <div class="tags"><span class="tag">TCP/IP</span><span class="tag">Infrastructure</span></div>
+            <h3 class="cert-name">Siber Güvenliğe Giriş</h3>
+            <div class="tags"><span class="tag">Essentials</span><span class="tag">Overview</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">DoS / DDoS & Protection</h3>
-            <div class="tags"><span class="tag">Defense</span><span class="tag">Mitigation</span></div>
+            <h3 class="cert-name">Mobil Güvenlik ve Sızma Teknikleri</h3>
+            <div class="tags"><span class="tag">Mobile</span><span class="tag">Advanced</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Linux İşletim Sistemleri</h3>
-            <div class="tags"><span class="tag">SysAdmin</span><span class="tag">Hardening</span></div>
+            <h3 class="cert-name">Ağ Temelleri</h3>
+            <div class="tags"><span class="tag">Networking</span><span class="tag">OSI</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Sosyal Mühendislik</h3>
-            <div class="tags"><span class="tag">Phishing</span><span class="tag">Psychology</span></div>
+            <h3 class="cert-name">İleri Ağ Teknolojileri</h3>
+            <div class="tags"><span class="tag">Expert</span><span class="tag">Protocols</span></div>
+        </div>
+        <div class="card">
+            <span class="vendor">BTK Akademi</span>
+            <h3 class="cert-name">Siber Güvenlikte Linux İşletim Sistemleri</h3>
+            <div class="tags"><span class="tag">Linux</span><span class="tag">Hardening</span></div>
+        </div>
+        <div class="card">
+            <span class="vendor">BTK Akademi</span>
+            <h3 class="cert-name">DoS / DDoS Saldırıları ve Koruma</h3>
+            <div class="tags"><span class="tag">Mitigation</span><span class="tag">Availability</span></div>
+        </div>
+        <div class="card">
+            <span class="vendor">BTK Akademi</span>
+            <h3 class="cert-name">Sosyal Mühendislik ve Oltalama</h3>
+            <div class="tags"><span class="tag">Human Factor</span><span class="tag">Phishing</span></div>
         </div>
         <div class="card">
             <span class="vendor">BTK Akademi</span>
             <h3 class="cert-name">Bilişim Hukuku</h3>
-            <div class="tags"><span class="tag">Law</span><span class="tag">Ethics</span></div>
+            <div class="tags"><span class="tag">Ethical</span><span class="tag">Legal</span></div>
         </div>
     </div>
 
-    <h2>[03] Academic Foundations</h2>
+    <h2>[03] Academic & Research</h2>
     <div class="grid">
         <div class="card">
             <span class="vendor">ODTÜ BİLGE İŞ</span>
@@ -227,7 +236,8 @@
     </div>
 
     <footer>
-        <p class="tech-font">Initialized by Yetkin // Executing Success.sh ...</p>
+        <p class="tech-font">Root@Yetkin:~# echo "15 Years of Excellence."</p>
+        <p style="margin-top: 10px; opacity: 0.5;">© 2026 Portfolyo Yayına Alındı.</p>
     </footer>
 </div>
 
