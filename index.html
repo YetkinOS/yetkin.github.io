@@ -3,106 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yetkin | Dijital Portfolyo</title>
+    <title>Yetkin | Siber Güvenlik Portfolyosu</title>
     <style>
         :root {
-            --ana-renk: #f0f4f8;
+            --ana-renk: #0f172a;
             --vurgu-renk: #a29bfe; 
-            --metin-renk: #2d3436;
-            --kart-arkaplan: rgba(255, 255, 255, 0.8);
+            --kart-renk: #1e293b;
+            --metin-renk: #f8fafc;
+            --ikincil-metin: #94a3b8;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--ana-renk);
             color: var(--metin-renk);
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .konteyner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
         header {
             text-align: center;
-            padding: 50px 20px;
+            margin-bottom: 60px;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--vurgu-renk);
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -2px;
         }
 
         .bio {
-            font-style: italic;
-            color: #636e72;
+            font-size: 1.2rem;
+            color: var(--ikincil-metin);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .sertifika-konteyner {
+        .kategori-baslik {
+            border-left: 4px solid var(--vurgu-renk);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            color: var(--vurgu-renk);
+            font-size: 1.5rem;
+        }
+
+        .sertifika-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            width: 90%;
-            max-width: 1000px;
-            padding-bottom: 50px;
         }
 
-        .sertifika-kart {
-            background: var(--kart-arkaplan);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-            transition: transform 0.3s ease;
+        .kart {
+            background: var(--kart-renk);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .sertifika-kart:hover {
+        .kart:hover {
             transform: translateY(-5px);
             border-color: var(--vurgu-renk);
+            box-shadow: 0 10px 30px -10px rgba(162, 155, 254, 0.3);
         }
 
-        .sertifika-baslik {
-            font-weight: bold;
-            font-size: 1.2rem;
+        .sertifika-adi {
             display: block;
-            margin-bottom: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
         }
 
         .kurum {
-            font-size: 0.9rem;
+            display: block;
+            font-size: 0.85rem;
             color: var(--vurgu-renk);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .aciklama {
+            font-size: 0.9rem;
+            color: var(--ikincil-metin);
         }
 
         footer {
-            margin-top: auto;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #b2bec3;
+            text-align: center;
+            padding: 40px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
+<div class="konteyner">
     <header>
         <h1>Yetkin</h1>
-        <p class="bio">"Yetkinlik yolunda, 15 yıla sığan 12 başarı(sertifika) ve daha fazlası..."</p>
+        <p class="bio">Siber Güvenlik Meraklısı | Ofansif Güvenlik ve Ağ Teknolojileri</p>
     </header>
 
-    <div class="sertifika-konteyner">
-        <div class="sertifika-kart">
-            <span class="sertifika-baslik">Kali linux</span>
-            <span class="kurum">BTK AKADEMİ</span>
-            <p>Kali linux'a dair bir çok yeni şey öğrendim yolculuğum devam ediyor.</p>
+    <h2 class="kategori-baslik">Global Sertifikalar</h2>
+    <div class="sertifika-grid">
+        <div class="kart">
+            <span class="kurum">Cisco Networking Academy</span>
+            <span class="sertifika-adi">Introduction to Cybersecurity</span>
+            <p class="aciklama">Uluslararası standartlarda temel siber güvenlik ve ağ koruma prensipleri.</p>
         </div>
+    </div>
 
+    <h2 class="kategori-baslik">BTK Akademi Eğitimleri</h2>
+    <div class="sertifika-grid">
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">Kali Linux & Sızma Testi</span>
+            <p class="aciklama">Ofansif güvenlik araçları ve metodolojik sızma testi süreçleri.</p>
         </div>
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">Mobil Güvenlik ve Sızma Teknikleri</span>
+            <p class="aciklama">Android/iOS uygulama güvenliği ve mobil cihaz sızma testleri.</p>
+        </div>
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">Ağ Temelleri & İleri Ağ Teknolojileri</span>
+            <p class="aciklama">TCP/IP mimarisi, yönlendirme protokolleri ve karmaşık ağ yapıları.</p>
+        </div>
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">DoS / DDos Saldırıları ve Koruma</span>
+            <p class="aciklama">Hizmet dışı bırakma saldırıları türleri ve savunma stratejileri.</p>
+        </div>
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">Sosyal Mühendislik ve Oltalama</span>
+            <p class="aciklama">İnsan faktörlü güvenlik zafiyetleri ve phishing saldırı analizleri.</p>
+        </div>
+        <div class="kart">
+            <span class="kurum">BTK Akademi</span>
+            <span class="sertifika-adi">Bilişim Hukuku</span>
+            <p class="aciklama">Siber dünyadaki yasal sorumluluklar ve dijital haklar.</p>
+        </div>
+    </div>
+
+    <h2 class="kategori-baslik">Akademik & Diğer</h2>
+    <div class="sertifika-grid">
+        <div class="kart">
+            <span class="kurum">ODTÜ BİLGE İŞ</span>
+            <span class="sertifika-adi">Sızma Testine Giriş</span>
+            <p class="aciklama">Etik hackerlık dünyasına giriş ve temel siber güvenlik yaklaşımları.</p>
+        </div>
+    </div>
 
     <footer>
-        © 2026 Yetkin - github.io üzerinden sevgiyle tasarlandı.
+        © 2026 Yetkin. Tüm başarılar kaydedilmiştir.
     </footer>
+</div>
 
 </body>
 </html>
