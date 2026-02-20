@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetkin | Dijital Portfolyo</title>
+    <style>
+        :root {
+            --ana-renk: #f0f4f8;
+            --vurgu-renk: #a29bfe; 
+            --metin-renk: #2d3436;
+            --kart-arkaplan: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--metin-renk);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--vurgu-renk);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bio {
+            font-style: italic;
+            color: #636e72;
+        }
+
+        .sertifika-konteyner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            padding-bottom: 50px;
+        }
+
+        .sertifika-kart {
+            background: var(--kart-arkaplan);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .sertifika-kart:hover {
+            transform: translateY(-5px);
+            border-color: var(--vurgu-renk);
+        }
+
+        .sertifika-baslik {
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .kurum {
+            font-size: 0.9rem;
+            color: var(--vurgu-renk);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Yetkin</h1>
+        <p class="bio">"Yetkinlik yolunda, 15 yıla sığan 12 başarı(sertifika) ve daha fazlası..."</p>
+    </header>
+
+    <div class="sertifika-konteyner">
+        <div class="sertifika-kart">
+            <span class="sertifika-baslik">Kali linux</span>
+            <span class="kurum">BTK AKADEMİ</span>
+            <p>Kali linux'a dair bir çok yeni şey öğrendim yolculuğum devam ediyor.</p>
+        </div>
+
+        </div>
+
+    <footer>
+        © 2026 Yetkin - github.io üzerinden sevgiyle tasarlandı.
+    </footer>
+
+</body>
+</html>
