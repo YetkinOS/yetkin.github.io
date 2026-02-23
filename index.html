@@ -3,243 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yetkin | Cyber Security student</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>SİSTEME SIZILDI: HACKED BY MUHAMMET ZENCİRCİ</title>
     <style>
-        :root {
-            --bg: #0a0a0c;
-            --card-bg: #111114;
-            --accent: #00ff9d; 
-            --accent-soft: rgba(0, 255, 157, 0.1);
-            --text-main: #e2e8f0;
-            --text-dim: #94a3b8;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden; /* Matrix akışı için */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        body::before {
-            content: "";
+        /* Matrix Arka Planı */
+        #matrix-canvas {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 255, 157, 0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0, 255, 157, 0.02) 1px, transparent 1px);
-            background-size: 30px 30px;
-            z-index: -1;
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-
-        header {
-            text-align: left;
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 40px;
-            margin-bottom: 60px;
-        }
-
-        .tech-font { font-family: 'Fira Code', monospace; }
-
-        .glitch {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: -2px;
-        }
-
-        .status-bar {
-            display: inline-block;
-            background: var(--accent-soft);
-            color: var(--accent);
-            padding: 6px 15px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            margin-top: 15px;
-            border: 1px solid var(--accent);
-            box-shadow: 0 0 15px var(--accent-soft);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
 
         .card {
-            background: var(--card-bg);
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
-        }
-
-        .vendor {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .cert-name {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: #1e293b;
-            color: var(--text-dim);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-        }
-
-        h2 {
-            margin: 50px 0 25px;
-            font-size: 1.4rem;
-            color: var(--text-dim);
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h2::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #1e293b;
-            margin-left: 20px;
-        }
-
-        footer {
-            margin-top: 100px;
+            z-index: 2;
+            background: rgba(20, 0, 0, 0.9);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 3px solid #ff0000;
+            box-shadow: 0 0 50px #ff0000;
+            max-width: 500px;
+            width: 85%;
             text-align: center;
-            color: var(--text-dim);
-            font-family: 'Fira Code';
-            font-size: 0.8rem;
-            border-top: 1px solid #1e293b;
-            padding-top: 40px;
+            animation: glitch 1s infinite;
         }
 
-        @media (max-width: 768px) {
-            .glitch { font-size: 2.8rem; }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px #550000;
+        }
+
+        .name {
+            font-size: 1.8rem;
+            color: #fff;
+            background: #ff0000;
+            padding: 5px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            transform: rotate(-2deg);
+        }
+
+        .absurd-text {
+            font-size: 0.9rem;
+            color: #ff9999;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #ff0000;
+            box-shadow: 0 0 30px #fff;
+        }
+
+        .stats {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            text-align: left;
+            border-top: 1px dashed #ff0000;
+            padding-top: 10px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="glitch tech-font">YETKIN</div>
-        <p style="color: var(--text-dim); margin-top: 15px; font-size: 1.1rem;">
-            Cyber Security Enthusiast | Penetration Tester | Network Security
-        </p>
-        <div class="status-bar tech-font">> STATUS: FULL_ACCESS // AGE: 15 // LOCATION: TR</div>
-    </header>
+    <canvas id="matrix-canvas"></canvas>
 
-    <h2>[01] Global Certifications</h2>
-    <div class="grid">
-        <div class="card">
-            <span class="vendor">Cisco Networking Academy</span>
-            <h3 class="cert-name">Introduction to Cybersecurity</h3>
-            <div class="tags">
-                <span class="tag">International</span><span class="tag">Foundations</span><span class="tag">EN</span>
-            </div>
+    <div class="card">
+        <div style="font-size: 40px;">⚠️ ALERT ⚠️</div>
+        <h1>SİSTEMİN KRALI</h1>
+        <span class="name">Muhammet Zencirci</span>
+        
+        <p>İnternet kafe borcun 0 TL olarak güncellendi (çünkü o bir kral).</p>
+        
+        <div class="absurd-text">
+            * Uyarı: penci zorno.<br>
+            * Mouse hassasiyeti: %1000000
         </div>
+
+        <div class="stats">
+            > Cömertlik: MAX <br>
+            > Masa Numarası: allah bilir <br>
+            > Durum: Teşekkür edildi.
+        </div>
+        
+        <button class="btn" onclick="absurdFunction()">SİSTEMİ BAŞLAT</button>
     </div>
 
-    <h2>[02] BTK Akademi Certification Stack</h2>
-    <div class="grid">
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Kali Linux</h3>
-            <div class="tags"><span class="tag">OS</span><span class="tag">Offensive</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Sızma Testi</h3>
-            <div class="tags"><span class="tag">Pentest</span><span class="tag">Security</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Siber Güvenliğe Giriş</h3>
-            <div class="tags"><span class="tag">Essentials</span><span class="tag">Overview</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Mobil Güvenlik ve Sızma Teknikleri</h3>
-            <div class="tags"><span class="tag">Mobile</span><span class="tag">Advanced</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Ağ Temelleri</h3>
-            <div class="tags"><span class="tag">Networking</span><span class="tag">OSI</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">İleri Ağ Teknolojileri</h3>
-            <div class="tags"><span class="tag">Expert</span><span class="tag">Protocols</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Siber Güvenlikte Linux İşletim Sistemleri</h3>
-            <div class="tags"><span class="tag">Linux</span><span class="tag">Hardening</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">DoS / DDoS Saldırıları ve Koruma</h3>
-            <div class="tags"><span class="tag">Mitigation</span><span class="tag">Availability</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Sosyal Mühendislik ve Oltalama</h3>
-            <div class="tags"><span class="tag">Human Factor</span><span class="tag">Phishing</span></div>
-        </div>
-        <div class="card">
-            <span class="vendor">BTK Akademi</span>
-            <h3 class="cert-name">Bilişim Hukuku</h3>
-            <div class="tags"><span class="tag">Ethical</span><span class="tag">Legal</span></div>
-        </div>
-    </div>
+    <script>
+        // Matrix Efekti Scripti
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
 
-    <h2>[03] Academic & Research</h2>
-    <div class="grid">
-        <div class="card">
-            <span class="vendor">ODTÜ BİLGE İŞ</span>
-            <h3 class="cert-name">Sızma Testine Giriş</h3>
-            <div class="tags"><span class="tag">Academic</span><span class="tag">Methodology</span></div>
-        </div>
-    </div>
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    <footer>
-        <p class="tech-font">Root@Yetkin:~# echo "15 Years of Excellence."</p>
-        <p style="margin-top: 10px; opacity: 0.5;">© 2026 Portfolyo Yayına Alındı.</p>
-    </footer>
-</div>
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%\"'#&_(),.;:?!\\|{}<>[]^~";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#ff0000"; // Kırmızı Matrix
+            ctx.font = fontSize + "px arial";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        function absurdFunction() {
+            alert("SİSTEM ÇÖKTÜ! Muhammet çok kral olduğu için devreler yandı!");
+            alert("Yükleniyor... %99");
+            alert("yüklendi penci zurnalar");
+        }
+    </script>
 
 </body>
 </html>
